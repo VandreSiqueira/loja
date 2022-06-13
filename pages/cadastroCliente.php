@@ -7,9 +7,10 @@ if (isset($_POST['enviar'])) {
     $cpf = $_POST['cpf'];
     $email = $_POST['email'];
 
-    $query = "SELECT id FROM endereco WHERE endereco = {}";
-    $endereco_id = mysqli_query($con, $query);
- ("CALL inserir_cliente(?, ?, ?, ?, ?)
-   
-}
- ?>
+    $query_id = "SELECT id FROM endereco AS E WHERE E.endereco = {$_POST['endereco']}";
+    $endereco_id = mysqli_query($con, $query_id);
+
+    $query_procedure = "CALL inserir_cliente({$nome}, {$sobrenome}, {$email}, {$cpf}, {$endereco_id}";
+    $exec = mysqli_query($con, $query_procedure);
+
+ 
