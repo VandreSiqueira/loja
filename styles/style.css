@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    background-image: url("https://thumbs.dreamstime.com/b/teste-padr%C3%A3o-sem-emenda-da-fruta-96340397.jpg");
+    background-size: auto;
+}
+
+.content {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+input {
+    width: 100%;
+    margin: 0.5rem 0 0.5rem 0;
+    height: 2rem;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: rgb(213, 225, 235);
+}
+
+#submit {
+    background-color: rgb(28, 147, 194);
+    transition: 0.3s;
+    color: white;
+    border: 1px white;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+#submit:hover {
+    background-color: rgb(0, 217, 255)
+}
+
+select {
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    width: 100%;
+}

@@ -1,0 +1,18 @@
+#col1 {
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    width: 40rem;
+}
+
+#col1, img {
+    width: 200%;
+    margin-right: 1rem;
+}
+
+td {
+    text-align: center;
+    margin-top: 0.5rem;
+}

@@ -1,0 +1,19 @@
+.content {
+    width: 40rem;
+}
+
+td {
+    padding: 8px;
+}
+
+input {
+    width: 100%;
+}
+
+#submit {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
