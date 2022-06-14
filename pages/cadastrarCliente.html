@@ -1,6 +1,3 @@
-<?php 
-include('../conexao.php');
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,7 +11,7 @@ include('../conexao.php');
 </head>
 <body>
     <div class="content">
-        <form method="POST" action="../control/controlCliente.php">
+        <forms method="POST" action="cadastroCliente".php>
             <h2>Cadastrar cliente</h2>
             <label>Nome</label>
             <input type="first-name" name="nome" />
@@ -23,25 +20,14 @@ include('../conexao.php');
             <label>CPF</label>
             <input type="text" name="cpf" maxlength="11" />
             <label>Email</label>
-            <input type="email" name="email" /> 
+            <input type="email" name="email" />
             <label>Endereço</label>
             <select name="endereco">
-            <?php 
-                    $sql =mysqli_query($con, "SELECT E.endereco FROM endereco as E");
-                    $cnt=1;
-                    $row=mysqli_num_rows($sql);
-                    if($row>0){
-                    while ($result=mysqli_fetch_array($sql)) {           
-                    ?>  
-                        <option><?php echo htmlentities($result['endereco']);?></option>                      
-                    <?php 
-        
-                    $cnt++;
-                    } }
-            ?>
+                <option>Nenhuma das opções</option>
+                <option>...</option>
             </select>
-            <input id="submit" type="submit" name="cadastrar" value="Cadastrar" />
-        </form>
+            <input id="submit" type="submit" name="enviar" value="Cadastrar" />
+        </forms>
     </div>
 </body>
 </html>
