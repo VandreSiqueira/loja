@@ -74,7 +74,21 @@
                 </td>
             </tr>
             </table>
-            <input id="submit" type="submit" value="Fazer pedido" />
+            <div id="secao">
+                <div>
+                    <label>Cliente</label>
+                    <select name="cliente">
+                        <option>Selecione um cliente</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Vendedor</label>
+                    <select name="vendedor">
+                        <option>Selecione um vendedor</option>
+                    </select>
+                </div>
+            </div>
+            <input id="submit" type="submit" name="cadastrar" value="Fazer pedido" />
         </forms>
     </div>
 </body>

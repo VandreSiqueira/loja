@@ -17,3 +17,12 @@ input {
 img {
     width: 100%;
 }
+
+#secao {
+    display: flex;
+    justify-content: space-between;
+}
+
+#secao select {
+    width: 100%;
+}
