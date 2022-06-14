@@ -1,3 +1,6 @@
+<?php 
+include('../conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -20,7 +23,7 @@
             <label>CPF</label>
             <input type="text" name="cpf" maxlength="11" />
             <label>Email</label>
-            <input type="email" name="email" />
+            <input type="email" name="email" /> 
             <label>Endereço</label>
             <select name="endereco">
             <?php 
@@ -34,7 +37,8 @@
                     <?php 
         
                     $cnt++;
-                    } }?>
+                    } }
+            ?>
             </select>
             <input id="submit" type="submit" name="cadastrar" value="Cadastrar" />
         </forms>
