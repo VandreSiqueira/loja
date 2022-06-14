@@ -23,8 +23,18 @@
             <input type="email" name="email" />
             <label>Endereço</label>
             <select name="endereco">
-                <option>Nenhuma das opções</option>
-                <option>...</option>
+            <?php 
+                    $sql =mysqli_query($con, "SELECT E.endereco FROM endereco as E");
+                    $cnt=1;
+                    $row=mysqli_num_rows($sql);
+                    if($row>0){
+                    while ($result=mysqli_fetch_array($sql)) {           
+                    ?>  
+                        <option><?php echo htmlentities($result['endereco']);?></option>                      
+                    <?php 
+        
+                    $cnt++;
+                    } }?>
             </select>
             <input id="submit" type="submit" name="cadastrar" value="Cadastrar" />
         </forms>
