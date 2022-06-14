@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="content">
-        <forms method="POST" action="cadastroCliente.php>
+        <forms method="POST" action="control/controlCliente.php">
             <h2>Cadastrar cliente</h2>
             <label>Nome</label>
             <input type="first-name" name="nome" />
@@ -26,7 +26,7 @@
                 <option>Nenhuma das opções</option>
                 <option>...</option>
             </select>
-            <input id="submit" type="submit" name="enviar" value="Cadastrar" />
+            <input id="submit" type="submit" name="cadastrar" value="Cadastrar" />
         </forms>
     </div>
 </body>
