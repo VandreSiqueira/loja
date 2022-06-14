@@ -12,5 +12,5 @@ if (isset($_POST['enviar'])) {
 
     $query_procedure = "CALL inserir_cliente({$nome}, {$sobrenome}, {$email}, {$cpf}, {$endereco_id}";
     $exec = mysqli_query($con, $query_procedure);
-
+}
  

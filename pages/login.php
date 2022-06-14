@@ -17,7 +17,7 @@ $row = mysqli_num_rows($result);
 if($rows == 1){
     $_SESSION['vendedor'] = $email
     exit();
-}{
+} else {
     header('location: index.html');
     exit();
 }
