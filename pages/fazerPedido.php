@@ -1,3 +1,6 @@
+<?php 
+include('../conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -78,13 +81,37 @@
                 <div>
                     <label>Cliente</label>
                     <select name="cliente">
-                        <option>Selecione um cliente</option>
+                    <?php 
+                        $sql =mysqli_query($con, "SELECT CONCAT(C.nome, ' ', C.sobrenome) AS nome_completo FROM cliente as C");
+                        $cnt=1;
+                        $row=mysqli_num_rows($sql);
+                        if($row>0){
+                        while ($result=mysqli_fetch_array($sql)) {           
+                        ?>  
+                            <option><?php echo htmlentities($result['nome_completo']);?></option>                      
+                        <?php 
+            
+                        $cnt++;
+                        } }
+                    ?>
                     </select>
                 </div>
                 <div>
                     <label>Vendedor</label>
                     <select name="vendedor">
-                        <option>Selecione um vendedor</option>
+                    <?php 
+                        $sql =mysqli_query($con, "SELECT CONCAT(V.nome, ' ', V.sobrenome) AS nome_completo FROM vendedor as V");
+                        $cnt=1;
+                        $row=mysqli_num_rows($sql);
+                        if($row>0){
+                        while ($result=mysqli_fetch_array($sql)) {           
+                        ?>  
+                            <option><?php echo htmlentities($result['nome_completo']);?></option>                      
+                        <?php 
+            
+                        $cnt++;
+                        } }
+                    ?>
                     </select>
                 </div>
             </div>
