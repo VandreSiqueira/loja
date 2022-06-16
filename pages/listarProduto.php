@@ -1,3 +1,6 @@
+<?php 
+include('../conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -28,7 +31,7 @@
                 </th>
             </tr>
             <?php 
-                    $sql =mysqli_query($con, "SELECT P.nome FROM produto as P");
+                    $sql =mysqli_query($con, "SELECT * FROM produto as P");
                     $cnt=1;
                     $row=mysqli_num_rows($sql);
                     if($row>0){
