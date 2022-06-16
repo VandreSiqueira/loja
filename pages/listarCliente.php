@@ -17,44 +17,35 @@
             <h2>Clientes</h2>
             <table>
             <tr>
-                <th style="width: 50%;">
-                    Fruta
+                <th>
+                    Nome completo
                 </th>
-                <th style="width: 16%;">
-                    Quantidade
+                <th>
+                    CPF
                 </th>
-                <th style="width: 16%;">
-                    Preço
+                <th>
+                    Email
+                </th>
+                <th>
+                    Endereço
+                </th>
+                <th>
                 </th>
             </tr>
             <tr>
-                <td id="col1" style="width: 6%;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/812/812900.png" />
-                    <p>Maçã</p>
+                <td>
+                    <p>Pedro Vinícius Alcântara Oliveira</p>
                 </td>
-                <td style="width: 10%">
-                    <p>100</p>
+                <td style="width: 14%">
+                    <p>242.424.242-24</p>
                 </td>
-                <td style="width: 6%;">
-                    <p>R$ 3,00</p>
+                <td>
+                    <p>pvao@discente.ifpe.edu.br</p>
                 </td>
-                <td class="btnAcoes">
-                    <a id="edit" href="#">Editar</a>
-                    <a id="del" href="#">Excluir</a>
+                <td style="width: 15%">
+                    <p>Rua Sargento de Moura</p>
                 </td>
-            </tr>
-            <tr>
-                <td id="col1" style="width: 6%;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3616/3616072.png" />
-                    <p>Laranja</p>
-                </td>
-                <td style="width: 10%">
-                    <p>50</p>
-                </td>
-                <td style="width: 6%;">
-                    <p>R$ 2,00</p>
-                </td>
-                <td class="btnAcoes">
+                <td>
                     <a id="edit" href="#">Editar</a>
                     <a id="del" href="#">Excluir</a>
                 </td>

@@ -27,37 +27,36 @@
                     Preço
                 </th>
             </tr>
-            <tr>
-                <td id="col1" style="width: 6%;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/812/812900.png" />
-                    <p>Maçã</p>
-                </td>
-                <td style="width: 10%">
-                    <p>100</p>
-                </td>
-                <td style="width: 6%;">
-                    <p>R$ 3,00</p>
-                </td>
-                <td class="btnAcoes">
-                    <a id="edit" href="#">Editar</a>
-                    <a id="del" href="#">Excluir</a>
-                </td>
-            </tr>
-            <tr>
-                <td id="col1" style="width: 6%;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3616/3616072.png" />
-                    <p>Laranja</p>
-                </td>
-                <td style="width: 10%">
-                    <p>50</p>
-                </td>
-                <td style="width: 6%;">
-                    <p>R$ 2,00</p>
-                </td>
-                <td class="btnAcoes">
-                    <a id="edit" href="#">Editar</a>
-                    <a id="del" href="#">Excluir</a>
-                </td>
+            <?php 
+                    $sql =mysqli_query($con, "SELECT P.nome FROM produto as P");
+                    $cnt=1;
+                    $row=mysqli_num_rows($sql);
+                    if($row>0){
+                    while ($result=mysqli_fetch_array($sql)) {           
+                    ?>  
+                       <tr>
+
+                        <td id="col1" style="width: 6%;">
+                            <img src="<?php echo htmlentities($result['link']);?>" />
+                            <p><?php echo htmlentities($result['nome']);?></p>
+                        </td>
+                        <td style="width: 10%">
+                            <p><?php echo htmlentities($result['quantidade']);?></p>
+                        </td>
+                        <td style="width: 6%;">
+                            <p><?php echo htmlentities($result['preco']);?></p>
+                        </td>
+
+                        <td class="btnAcoes">
+                            <a id="edit" href="#">Editar</a>
+                            <a id="del" href="#">Excluir</a>
+                        </td>
+                    </tr>
+                    <tr>                      
+                    <?php 
+                    $cnt++;
+                    } }
+            ?>
             </tr>
             </table>
         </forms>
