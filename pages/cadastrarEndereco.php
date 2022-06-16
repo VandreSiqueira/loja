@@ -22,7 +22,19 @@ include('../conexao.php');
             <input type="text" name="bairro" />
             <label>Cidade</cidade>
             <select name="cidade">
-                <option>Selecione uma cidade...</option>
+            <?php 
+                    $sql =mysqli_query($con, "SELECT C.cidade FROM cidade as C");
+                    $cnt=1;
+                    $row=mysqli_num_rows($sql);
+                    if($row>0){
+                    while ($result=mysqli_fetch_array($sql)) {           
+                    ?>  
+                        <option><?php echo htmlentities($result['cidade']);?></option>                      
+                    <?php 
+        
+                    $cnt++;
+                    } }
+            ?>
             </select>
             <label>CEP</label>
             <input type="text" name="cep" maxlength="10" />

@@ -12,7 +12,6 @@ if(isset($_POST['cadastrar'])){
     $query_endereco = mysqli_query($con, "SELECT E.id FROM endereco AS E WHERE E.endereco LIKE '%$endereco%'");
     $endereco_id = $query_endereco->fetch_array()[0];
 
-
     $exec=mysqli_query($con,"CALL inserir_cliente('$nome','$sobrenome','$cpf','$email','$endereco_id')");
 
     if($exec){
