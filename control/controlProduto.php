@@ -4,11 +4,11 @@ include('../conexao.php');
 if(isset($_POST['cadastrar'])){
    
     $nome=$_POST['nome'];
-    $link=$_POST['link'];
+    $link=$_POST['icon'];
     $preco=$_POST['preco'];
     $quantidade=$_POST['quantidade'];
 
-    $exec=mysqli_query($con,"CALL inserir_produto('$nome','$link','$preco','$quantidade')");
+    $exec=mysqli_query($con,"CALL inserir_produto('$nome','$preco','$quantidade, '$link')");
 
     if($exec){
         echo "<script>alert('Cadastrado com sucesso!');</script>";
