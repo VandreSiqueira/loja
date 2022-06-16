@@ -1,3 +1,6 @@
+<?php 
+include('../conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -29,36 +32,34 @@
                     Total
                 </th>
             </tr>
-            <tr>
-                <td id="col1" style="width: 6%;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/812/812900.png" />
-                    <p>Maçã</p>
-                </td>
-                <td style="width: 10%">
-                    <p>100</p>
-                </td>
-                <td style="width: 6%;">
-                    <p>R$ 3,00</p>
-                </td>
-                <td style="width: 6%;">
-                    <p>R$ 300,00</p>
-                </td>
-            </tr>
-            <tr>
-                <td id="col1" style="width: 6%;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3616/3616072.png" />
-                    <p>Laranja</p>
-                </td>
-                <td style="width: 10%">
-                    <p>50</p>
-                </td>
-                <td style="width: 6%;">
-                    <p>R$ 2,00</p>
-                </td>
-                <td style="width: 6%;">
-                    <p>R$ 100,00</p>
-                </td>
-            </tr>
+            <?php 
+                    $sql =mysqli_query($con, "SELECT * FROM view_estoque");
+                    $cnt=1;
+                    $row=mysqli_num_rows($sql);
+                    if($row>0){
+                    while ($result=mysqli_fetch_array($sql)) {           
+                    ?>  
+                       <tr>
+
+                        <td id="col1" style="width: 6%;">
+                            <img src="<?php echo htmlentities($result['link']);?>" />
+                            <p><?php echo htmlentities($result['nome']);?></p>
+                        </td>
+                        <td style="width: 10%">
+                            <p><?php echo htmlentities($result['quantidade']);?></p>
+                        </td>
+                        <td style="width: 6%;">
+                            <p><?php echo htmlentities($result['preco_unitario']);?></p>
+                        </td>
+                        <td style="width: 6%;">
+                            <p><?php echo htmlentities($result['preco_total']);?></p>
+                        </td>
+                    </tr>
+                    <tr>                      
+                    <?php 
+                    $cnt++;
+                    } }
+            ?>
             </table>
         </forms>
     </div>

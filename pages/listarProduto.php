@@ -52,7 +52,7 @@ include('../conexao.php');
 
                         <td class="btnAcoes">
                             <a id="edit" href="#">Editar</a>
-                            <a id="del" href="#">Excluir</a>
+                            <a id="del" href="../control/controlProduto.php?del=<?php echo htmlentities($result['id']);?>">Excluir</a>
                         </td>
                     </tr>
                     <tr>                      
