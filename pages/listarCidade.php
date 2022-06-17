@@ -29,18 +29,31 @@ include('../conexao.php');
                 <th>
                 </th>
             </tr>
-            <tr>
-                <td style="width: 50%">
-                    <p>Afogados da Ingazeira</p>
-                </td>
-                <td style="width: 50%">
-                    <p>Brasil</p>
-                </td>
-                <td>
-                    <a id="edit" href="#">Editar</a>
-                    <a id="del" href="#">Excluir</a>
-                </td>
-            </tr>
+            <?php 
+                    $sql =mysqli_query($con, "SELECT * FROM cidade");
+                    $cnt=1;
+                    $row=mysqli_num_rows($sql);
+                    if($row>0){
+                    while ($result=mysqli_fetch_array($sql)) {  
+                    $query_pais = mysqli_query($con, "SELECT P.pais FROM pais AS P WHERE P.id = {$result['pais_id']}");
+                    $pais = $query_pais->fetch_array()[0]; 
+                    ?>  
+                       <tr>
+                       <td style="width: 50%">
+                            <p><?php echo htmlentities($result['cidade']);?></p>
+                        </td>
+                        <td style="width: 50%">
+                            <p><?php echo $pais;?></p>
+                       </td>
+                        <td class="btnAcoes">
+                            <a id="edit" href="#">Editar</a>
+                        </td>
+                    </tr>
+                    <tr>                      
+                    <?php 
+                    $cnt++;
+                    } }
+            ?>
             </table>
         </forms>
     </div>

@@ -19,4 +19,5 @@ if(isset($_POST['cadastrar'])){
         echo "<script>window.location.href='../pages/menu.php'</script>"; 
     }
 }
+
 ?>
