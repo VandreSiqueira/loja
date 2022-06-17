@@ -35,24 +35,38 @@ include('../conexao.php');
                 <th>
                 </th>
             </tr>
-            <tr>
-                <td>
-                    <p>Pedro Vinícius Alcântara Oliveira</p>
-                </td>
-                <td style="width: 14%">
-                    <p>242.424.242-24</p>
-                </td>
-                <td>
-                    <p>pvao@discente.ifpe.edu.br</p>
-                </td>
-                <td style="width: 15%">
-                    <p>Rua Sargento de Moura</p>
-                </td>
-                <td>
-                    <a id="edit" href="#">Editar</a>
-                    <a id="del" href="#">Excluir</a>
-                </td>
-            </tr>
+            <?php 
+                    $sql =mysqli_query($con, "SELECT * FROM cliente");
+                    $cnt=1;
+                    $row=mysqli_num_rows($sql);
+                    if($row>0){
+                    while ($result=mysqli_fetch_array($sql)) {
+                    $query_endereco = mysqli_query($con, "SELECT E.endereco FROM endereco AS E WHERE E.id = {$result['endereco_id']}");
+                    $endereco = $query_endereco->fetch_array()[0];        
+                    ?>  
+                       <tr>
+                       <td>
+                            <p><?php echo htmlentities($result['nome']) . ' ' . htmlentities($result['sobrenome']);?></p>
+                        </td>
+                        <td style="width: 14%">
+                            <p><?php echo htmlentities($result['cpf']);?></p>
+                        </td>
+                        <td>
+                            <p><?php echo htmlentities($result['email']);?></p>
+                        </td>
+                        <td style="width: 15%">
+                            <p><?php echo $endereco;?></p>
+                        </td>
+                        <td class="btnAcoes">
+                            <a id="edit" href="#">Editar</a>
+                            <a id="del" href="../control/controlCliente.php?del=<?php echo htmlentities($result['id']);?>">Excluir</a>
+                        </td>
+                    </tr>
+                    <tr>                      
+                    <?php 
+                    $cnt++;
+                    } }
+            ?>
             </table>
         </forms>
     </div>
