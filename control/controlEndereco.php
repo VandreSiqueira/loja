@@ -23,4 +23,11 @@ if(isset($_POST['cadastrar'])){
         echo "<script>window.location.href='../pages/menu.php'</script>"; 
     }
 }
+
+if(isset($_REQUEST['del'])){
+    $rid=intval($_GET['del']);
+    $sql =mysqli_query($con,"CALL deletar_endereco('$rid')");
+    echo "<script>alert('Endereço deletado');</script>";
+    echo "<script>window.location.href='../pages/listarEndereco.php'</script>"; 
+}
 ?>

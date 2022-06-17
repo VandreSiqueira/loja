@@ -41,30 +41,50 @@ include('../conexao.php');
                 <th>
                 </th>
             </tr>
-            <tr>
-                <td>
-                    <p>Rua Inocêncio Nobelino Alves</p>
-                </td>
-                <td style="width: 15%">
-                    <p>São Bráz</p>
-                </td>
-                <td>
-                    <p>Afogados da Ingazeira</p>
-                </td>
-                <td style="width: 15%">
-                    <p>56800-000</p>
-                </td>
-                <td style="width: 15%">
-                    <p>(87)9 9808-9989</p>
-                </td>
-                <td style="width: 15%">
-                    <p>Brasil</p>
-                </td>
-                <td>
-                    <a id="edit" href="#">Editar</a>
-                    <a id="del" href="#">Excluir</a>
-                </td>
-            </tr>
+            <?php 
+                    $sql =mysqli_query($con, "SELECT * FROM endereco");
+                    $cnt=1;
+                    $row=mysqli_num_rows($sql);
+                    if($row>0){
+                    while ($result=mysqli_fetch_array($sql)) {
+                    $query_cidade = mysqli_query($con, "SELECT C.cidade FROM cidade AS C WHERE C.id = {$result['cidade_id']}");
+                    $cidade = $query_cidade->fetch_array()[0];
+                    
+                    $query_paisId = mysqli_query($con, "SELECT C.pais_id FROM cidade AS C WHERE C.id = {$result['cidade_id']}");
+                    $pais_id = $query_paisId->fetch_array()[0];
+                    
+                    $query_pais = mysqli_query($con, "SELECT P.pais FROM pais AS P WHERE P.id = {$pais_id}");
+                    $pais = $query_pais->fetch_array()[0]; 
+                    ?>  
+                       <tr>
+                       <td>
+                            <p><?php echo htmlentities($result['endereco']);?></p>
+                        </td>
+                        <td style="width: 15%">
+                            <p><?php echo htmlentities($result['bairro']);?></p>
+                        </td>
+                        <td>
+                            <p><?php echo $cidade;?></p>
+                        </td>
+                        <td style="width: 15%">
+                            <p><?php echo htmlentities($result['cep']);?></p>
+                        </td>
+                        <td style="width: 15%">
+                            <p><?php echo htmlentities($result['telefone']);?></p>
+                        </td>
+                        <td style="width: 15%">
+                            <p><?php echo $pais;?></p>
+                        </td>
+                        <td class="btnAcoes">
+                            <a id="edit" href="#">Editar</a>
+                            <a id="del" href="../control/controlEndereco.php?del=<?php echo htmlentities($result['id']);?>">Excluir</a>
+                        </td>
+                    </tr>
+                    <tr>                      
+                    <?php 
+                    $cnt++;
+                    } }
+            ?>
             </table>
         </forms>
     </div>
