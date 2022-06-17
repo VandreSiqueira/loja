@@ -23,4 +23,12 @@ if(isset($_POST['cadastrar'])){
         echo "<script>window.location.href='../pages/menu.php'</script>"; 
     }
 }
+
+if(isset($_REQUEST['del'])){
+    $rid=intval($_GET['del']);
+    $sql =mysqli_query($con,"CALL deletar_cliente('$rid')");
+    echo "<script>alert('Cliente deletado');</script>";
+    echo "<script>window.location.href='../pages/listarCliente.php'</script>"; 
+}
+?>
 ?>
