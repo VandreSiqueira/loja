@@ -15,7 +15,7 @@ include('../conexao.php');
 </head>
 <body>
     <div class="content">
-        <forms method="post" action="../control/controlPedido.php">
+        <form method="post" action="../control/controlPedido.php">
             <h2>Fazer pedido</h2>
             <table>
             <?php 
@@ -50,13 +50,13 @@ include('../conexao.php');
                     <label>Cliente</label>
                     <select name="cliente">
                     <?php 
-                        $sql =mysqli_query($con, "SELECT CONCAT(C.nome, ' ', C.sobrenome) AS nome_completo FROM cliente as C");
+                        $sql =mysqli_query($con, "SELECT * FROM cliente as C");
                         $cnt=1;
                         $row=mysqli_num_rows($sql);
                         if($row>0){
-                        while ($result=mysqli_fetch_array($sql)) {           
+                        while ($resultado=mysqli_fetch_array($sql)) {           
                         ?>  
-                            <option value="<?php echo htmlentities($result['id']);?>"><?php echo htmlentities($result['nome_completo']);?></option>                      
+                            <option value="<?php echo htmlentities($resultado['id']);?>"><?php echo $resultado['nome'] . " " . $resultado['sobrenome'];?></option>                      
                         <?php 
             
                         $cnt++;
@@ -68,13 +68,13 @@ include('../conexao.php');
                     <label>Vendedor</label>
                     <select name="vendedor">
                     <?php 
-                        $sql = mysqli_query($con, "SELECT CONCAT(V.nome, ' ', V.sobrenome) AS nome_completo FROM vendedor as V");
+                        $sql = mysqli_query($con, "SELECT * FROM vendedor as V");
                         $cnt=1;
                         $row=mysqli_num_rows($sql);
                         if($row>0){
-                        while ($result=mysqli_fetch_array($sql)) {           
+                        while ($resultado1=mysqli_fetch_array($sql)) {           
                         ?>  
-                            <option value="<?php echo htmlentities($result['id']);?>"><?php echo htmlentities($result['nome_completo']);?></option>                      
+                            <option value="<?php echo htmlentities($resultado1['id']);?>"><?php echo $resultado1['nome'] . " " . $resultado1['sobrenome'];?></option>                      
                         <?php 
             
                         $cnt++;
@@ -84,7 +84,7 @@ include('../conexao.php');
                 </div>
             </div>
             <input id="submit" type="submit" name="cadastrar" value="Fazer pedido" />
-        </forms>
+        </form>
     </div>
 </body>
 </html>

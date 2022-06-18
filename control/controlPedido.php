@@ -1,19 +1,19 @@
 <?php
 
-include('../conexao.php');
+$mysqli = new mysqli("localhost", "root", "", "loja");
+
 if(isset($_POST['cadastrar'])){
-   
-    $nome=$_POST['nome'];
-    $sobrenome=$_POST['sobrenome'];
-    $cpf=$_POST['cpf'];
-    $email=$_POST['email'];
+    $cliente_id = $_POST['cliente'];
+    $vendedor_id = $_POST['vendedor'];
 
-    $endereco = $_POST['endereco'];
-    $query_endereco = mysqli_query($con, "SELECT E.id FROM endereco AS E WHERE E.endereco LIKE '%$endereco%'");
-    $endereco_id = $query_endereco->fetch_array()[0];
+    $mysqli->query("CALL inserir_pedido('$cliente_id','$vendedor_id', @ult_id)");
+    $res = $mysqli->query("SELECT @ult_id as _p_out");
+    
+    $row = $res->fetch_assoc();
+    echo $row['_p_out'];
+    
 
-    $exec=mysqli_query($con,"CALL inserir_cliente('$nome','$sobrenome','$cpf','$email','$endereco_id')");
-
+/*
     if($exec){
         echo "<script>alert('Cadastrado com sucesso!');</script>";
         echo "<script>window.location.href='../pages/menu.php'</script>"; 
@@ -22,8 +22,6 @@ if(isset($_POST['cadastrar'])){
         echo "<script>alert('Houve algum erro! Tente novamente');</script>";
         echo "<script>window.location.href='../pages/menu.php'</script>"; 
     }
+*/
 }
-
-
-?>
 ?>
