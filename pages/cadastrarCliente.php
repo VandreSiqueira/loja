@@ -20,6 +20,7 @@ include('../conexao.php');
         while ($result=mysqli_fetch_array($sql)) {
         ?>
         <form method="POST" action="../control/controlCliente.php">
+            <input type="hidden" name="id" value="<?php echo (isset($_GET['id']) ? $_GET['id'] : "0"); ?>" />
             <h2><?php echo (isset($_GET['id']) ? "Atualizar" : "Cadastrar"); ?> cliente</h2>
             <label>Nome</label>
             <input type="first-name" name="nome" value="<?php echo htmlentities($result['nome']);?>" />
