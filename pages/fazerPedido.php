@@ -18,64 +18,29 @@ include('../conexao.php');
         <forms method="POST">
             <h2>Fazer pedido</h2>
             <table>
-            <tr>
-                <td style="width: 6%;">
-                    <label>Maçã</label>
-                </td>
-                <td style="width: 6%;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/812/812900.png" />
-                </td>
-                <td style="width: 10%">
-                    <input type="number" />
-                </td>
-                <td style="width: 6%;">
-                    <label>Laranja</label>
-                </td>
-                <td style="width: 6%;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3616/3616072.png" />
-                </td>
-                <td style="width: 10%">
-                    <input type="number" />
-                </td>
-                <td style="width: 6%;">
-                    <label>Abacaxi</label>
-                </td>
-                <td style="width: 6%;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1135/1135532.png" />
-                </td>
-                <td style="width: 10%">
-                    <input type="number" />
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 6%">
-                    <label>Manga</label>
-                </td>
-                <td style="width: 6%">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1135/1135559.png" />
-                </td>
-                <td style="width: 10%">
-                    <input type="number" />
-                </td>
-                <td style="width: 6%">
-                    <label>Goiaba</label>
-                </td>
-                <td style="width: 6%">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2045/2045020.png" />
-                </td>
-                <td style="width: 10%">
-                    <input type="number" />
-                </td>
-                <td style="width: 6%">
-                    <label>Banana</label>
-                </td>
-                <td style="width: 10%">
-                    <img src="https://icon-library.com/images/banana-icon/banana-icon-27.jpg" />
-                </td>
-                <td style="width: 10%">
-                    <input type="number" />
-                </td>
-            </tr>
+            <?php 
+                    $sql =mysqli_query($con, "SELECT * FROM produto as P");
+                    $cnt=1;
+                    $row=mysqli_num_rows($sql);
+                    if($row>0){
+                    while ($result=mysqli_fetch_array($sql)) {           
+                    ?> 
+                       <input type="hidden" name="id[]"/> 
+                       <tr>
+
+                        <td id="col1" style="width: 6%;">
+                            <img src="<?php echo htmlentities($result['link']);?>" />
+                            <p><?php echo htmlentities($result['nome']);?></p>
+                        </td>
+                        <td style="width: 10%">
+                            <input type="number" name="qnt[]"/>
+                        </td>
+                    </tr>
+                    <tr>                      
+                    <?php 
+                    $cnt++;
+                    } }
+            ?>
             </table>
             <div id="secao">
                 <div>
@@ -100,7 +65,7 @@ include('../conexao.php');
                     <label>Vendedor</label>
                     <select name="vendedor">
                     <?php 
-                        $sql =mysqli_query($con, "SELECT CONCAT(V.nome, ' ', V.sobrenome) AS nome_completo FROM vendedor as V");
+                        $sql = mysqli_query($con, "SELECT CONCAT(V.nome, ' ', V.sobrenome) AS nome_completo FROM vendedor as V");
                         $cnt=1;
                         $row=mysqli_num_rows($sql);
                         if($row>0){

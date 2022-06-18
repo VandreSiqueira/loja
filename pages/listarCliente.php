@@ -58,7 +58,7 @@ include('../conexao.php');
                             <p><?php echo $endereco;?></p>
                         </td>
                         <td class="btnAcoes">
-                            <a id="edit" href="#">Editar</a>
+                            <a id="edit" href="cadastrarCliente.php?id=<?php echo htmlentities($result['id']);?>">Editar</a>
                             <a id="del" href="../control/controlCliente.php?del=<?php echo htmlentities($result['id']);?>">Excluir</a>
                         </td>
                     </tr>
