@@ -28,7 +28,7 @@ if(isset($_POST['cadastrar'])){
         $sobrenome=$_POST['sobrenome'];
         $cpf=$_POST['cpf'];
         $email=$_POST['email'];
-        $id = $_POST['id']
+        $id = $_POST['id'];
 
         $endereco = $_POST['endereco'];
         $query_endereco = mysqli_query($con, "SELECT E.id FROM endereco AS E WHERE E.endereco LIKE '%$endereco%'");
