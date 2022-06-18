@@ -25,7 +25,7 @@ include('../conexao.php');
                     if($row>0){
                     while ($result=mysqli_fetch_array($sql)) {           
                     ?> 
-                       <input type="hidden" name="id[]"/> 
+                       <input type="hidden" name="id[]" value="<?php echo htmlentities($result['id']);?>"/> 
                        <tr>
 
                         <td id="col1" style="width: 6%;">

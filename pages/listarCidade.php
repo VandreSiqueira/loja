@@ -44,9 +44,9 @@ include('../conexao.php');
                         </td>
                         <td style="width: 50%">
                             <p><?php echo $pais;?></p>
-                       </td>
+                        </td>
                         <td class="btnAcoes">
-                            <a id="edit" href="#">Editar</a>
+                            <a id="edit" href="cadastrarCidade.php?id=<?php echo htmlentities($result['id']);?>">Editar</a>
                         </td>
                     </tr>
                     <tr>                      

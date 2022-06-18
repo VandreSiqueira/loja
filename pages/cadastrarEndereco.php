@@ -10,37 +10,49 @@ include('../conexao.php');
 
     <link rel="stylesheet" type="text/css" href="../styles/menu.css" />
     <link rel="stylesheet" type="text/css" href="../styles/style.css" />
-    <title>Cadastrar Endereço - Loja</title>
+    <title><?php echo (isset($_GET['id']) ? "Atualizar" : "Cadastrar"); ?> Endereço - Loja</title>
 </head>
 <body>
     <div class="content">
+        <?php
+        $userId=intval($_GET['id']);
+        $sql = mysqli_query($con, "SELECT * FROM endereco WHERE id = $userId");
+        while ($result=mysqli_fetch_array($sql)) {
+        ?>
         <form method="POST" action="../control/controlEndereco.php">
-            <h2>Cadastrar endereço</h2>
+            <input type="hidden" name="id" value="<?php echo (isset($_GET['id']) ? $_GET['id'] : "0"); ?>" />
+            <h2><?php echo (isset($_GET['id']) ? "Atualizar" : "Cadastrar"); ?> endereço</h2>
             <label>Endereço</label>
-            <input type="text" name="endereco" />
+            <input type="text" name="endereco" value="<?php echo htmlentities($result['endereco']);?>" />
             <label>Bairro</label>
-            <input type="text" name="bairro" />
+            <input type="text" name="bairro" value="<?php echo htmlentities($result['bairro']);?>"/>
             <label>Cidade</cidade>
             <select name="cidade">
-            <?php 
-                    $sql =mysqli_query($con, "SELECT C.cidade FROM cidade as C");
+            <?php
+                    $query_endereco = mysqli_query($con, "SELECT C.cidade FROM cidade AS C WHERE C.id = '{$result['pais_id']}'");
+                    $endereco = $query_endereco->fetch_array()[0];
+                    ?><option selected> <?php echo $endereco; ?> </option><?php
+
+                    $sql =mysqli_query($con, "SELECT * FROM cidade");
                     $cnt=1;
                     $row=mysqli_num_rows($sql);
                     if($row>0){
-                    while ($result=mysqli_fetch_array($sql)) {           
-                    ?>  
-                        <option><?php echo htmlentities($result['cidade']);?></option>                      
+                    while ($resultado=mysqli_fetch_array($sql)) {           
+                    ?>
+                    <?php if($result['cidade_id'] != $resultado['id']) {?>
+                        <option><?php echo htmlentities($resultado['cidade']);?></option>                      
                     <?php 
-        
+                    }
                     $cnt++;
                     } }
             ?>
             </select>
+            <?php } ?>
             <label>CEP</label>
-            <input type="text" name="cep" maxlength="10" />
+            <input type="text" name="cep" maxlength="10" value="<?php echo htmlentities($result['cep']);?>"/>
             <label>Telefone</label>
-            <input type="text" name="telefone" maxlength="20" />
-            <input id="submit" type="submit" name="cadastrar" value="Cadastrar" />
+            <input type="text" name="telefone" maxlength="20" value="<?php echo htmlentities($result['telefone']);?>"/>
+            <input id="submit" type="submit" name="cadastrar" value="<?php echo (isset($_GET['id']) ? "Atualizar" : "Cadastrar"); ?>" />
         </form>
     </div>
 </body>

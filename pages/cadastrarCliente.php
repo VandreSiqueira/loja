@@ -10,7 +10,7 @@ include('../conexao.php');
 
     <link rel="stylesheet" type="text/css" href="../styles/menu.css" />
     <link rel="stylesheet" type="text/css" href="../styles/style.css" />
-    <title>Cadastrar Cliente - Loja</title>
+    <title><?php echo (isset($_GET['id']) ? "Atualizar" : "Cadastrar"); ?> Cliente - Loja</title>
 </head>
 <body>
     <div class="content">
@@ -51,7 +51,6 @@ include('../conexao.php');
                     $cnt++;
                     }
 
-                    /**/
                     }
                     
             ?>
