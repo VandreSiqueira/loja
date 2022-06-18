@@ -29,7 +29,7 @@ include('../conexao.php');
             <label>Cidade</cidade>
             <select name="cidade">
             <?php
-                    $query_endereco = mysqli_query($con, "SELECT C.cidade FROM cidade AS C WHERE C.id = '{$result['pais_id']}'");
+                    $query_endereco = mysqli_query($con, "SELECT C.cidade FROM cidade AS C WHERE C.id = '{$result['cidade_id']}'");
                     $endereco = $query_endereco->fetch_array()[0];
                     ?><option selected> <?php echo $endereco; ?> </option><?php
 

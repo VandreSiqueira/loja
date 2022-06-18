@@ -47,6 +47,7 @@ include('../conexao.php');
                         </td>
                         <td class="btnAcoes">
                             <a id="edit" href="cadastrarCidade.php?id=<?php echo htmlentities($result['id']);?>">Editar</a>
+                            <a id="del" href="../control/controlCidade.php?del=<?php echo htmlentities($result['id']);?>">Excluir</a>
                         </td>
                     </tr>
                     <tr>                      

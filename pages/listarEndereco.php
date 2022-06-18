@@ -76,7 +76,7 @@ include('../conexao.php');
                             <p><?php echo $pais;?></p>
                         </td>
                         <td class="btnAcoes">
-                            <a id="edit" href="#">Editar</a>
+                            <a id="edit" href="cadastrarEndereco.php?id=<?php echo htmlentities($result['id']);?>">Editar</a>
                             <a id="del" href="../control/controlEndereco.php?del=<?php echo htmlentities($result['id']);?>">Excluir</a>
                         </td>
                     </tr>

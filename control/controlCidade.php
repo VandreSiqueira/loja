@@ -20,4 +20,10 @@ if(isset($_POST['cadastrar'])){
     }
 }
 
+if(isset($_REQUEST['del'])){
+    $rid=intval($_GET['del']);
+    $sql =mysqli_query($con,"CALL deletar_cidade('$rid')");
+    echo "<script>alert('Cidade deletada');</script>";
+    echo "<script>window.location.href='../pages/listarCidade.php'</script>"; 
+}
 ?>
