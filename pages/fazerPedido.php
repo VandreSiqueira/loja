@@ -15,7 +15,7 @@ include('../conexao.php');
 </head>
 <body>
     <div class="content">
-        <forms method="POST">
+        <forms method="post" action="../control/controlPedido.php">
             <h2>Fazer pedido</h2>
             <table>
             <?php 
@@ -35,6 +35,9 @@ include('../conexao.php');
                         <td style="width: 10%">
                             <input type="number" name="qnt[]"/>
                         </td>
+                        <td style="width: 10%">
+                            <p>Preço: R$ <?php echo htmlentities($result['preco']);?></p>
+                        </td>
                     </tr>
                     <tr>                      
                     <?php 
@@ -53,7 +56,7 @@ include('../conexao.php');
                         if($row>0){
                         while ($result=mysqli_fetch_array($sql)) {           
                         ?>  
-                            <option><?php echo htmlentities($result['nome_completo']);?></option>                      
+                            <option value="<?php echo htmlentities($result['id']);?>"><?php echo htmlentities($result['nome_completo']);?></option>                      
                         <?php 
             
                         $cnt++;
@@ -71,7 +74,7 @@ include('../conexao.php');
                         if($row>0){
                         while ($result=mysqli_fetch_array($sql)) {           
                         ?>  
-                            <option><?php echo htmlentities($result['nome_completo']);?></option>                      
+                            <option value="<?php echo htmlentities($result['id']);?>"><?php echo htmlentities($result['nome_completo']);?></option>                      
                         <?php 
             
                         $cnt++;

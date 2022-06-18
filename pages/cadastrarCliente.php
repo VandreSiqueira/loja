@@ -32,18 +32,26 @@ include('../conexao.php');
             <input type="email" name="email" value="<?php echo htmlentities($result['email']);?>" /> 
             <label>Endereço</label>
             <select name="endereco">
-            <?php 
+            
+            <?php
+                    $query_endereco = mysqli_query($con, "SELECT E.endereco FROM endereco as E WHERE E.id = '{$result['endereco_id']}'");
+                    $endereco = $query_endereco->fetch_array()[0];
+                    ?><option selected> <?php echo $endereco; ?> </option><?php
                     $sql =mysqli_query($con, "SELECT E.endereco FROM endereco as E");
                     $cnt=1;
                     $row=mysqli_num_rows($sql);
                     if($row>0){
-                    while ($result=mysqli_fetch_array($sql)) {           
+                    while ($resultado=mysqli_fetch_array($sql)) {           
                     ?>  
-                        <option><?php echo htmlentities($result['endereco']);?></option>                      
+                        <option><?php echo htmlentities($resultado['endereco']);?></option>                      
                     <?php 
         
                     $cnt++;
-                    } }
+                    }
+
+                    /**/
+                    }
+                    
             ?>
             </select>
             <?php } ?>
