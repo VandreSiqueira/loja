@@ -24,6 +24,7 @@ if(isset($_POST['cadastrar'])){
             echo "<script>window.location.href='../pages/menu.php'</script>"; 
         }
     } else {
+        $id = $_POST['id'];
         $nome=$_POST['nome'];
         $sobrenome=$_POST['sobrenome'];
         $cpf=$_POST['cpf'];
