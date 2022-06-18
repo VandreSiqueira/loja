@@ -13,15 +13,15 @@ include('../conexao.php');
 </head>
 <body>
     <div class="content">
+    <form method="POST" action="../control/controlCliente.php">
         <?php
         if(isset($_GET['id'])){
             $userId=intval($_GET['id']);
             $sql = mysqli_query($con, "SELECT * FROM cliente WHERE id = $userId");
             while ($result=mysqli_fetch_array($sql)) {
             ?>
-            <form method="POST" action="../control/controlCliente.php">
                 <input type="hidden" name="id" value="<?php echo htmlentities($result['id']);?>" />
-                <h2><?php echo (isset($_GET['id']) ? "Atualizar" : "Cadastrar"); ?> cliente</h2>
+                <h2>Atualizar cliente</h2>
                 <label>Nome</label>
                 <input type="first-name" name="nome" value="<?php echo htmlentities($result['nome']);?>" />
                 <label>Sobrenome</label>
@@ -57,7 +57,6 @@ include('../conexao.php');
                 </select>
                 <?php } 
         } else { ?>
-            <form method="POST" action="../control/controlCliente.php">
                 <h2>Cadastrar cliente</h2>
                 <label>Nome</label>
                 <input type="first-name" name="nome"/>
