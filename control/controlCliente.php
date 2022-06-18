@@ -24,11 +24,12 @@ if(isset($_POST['cadastrar'])){
             echo "<script>window.location.href='../pages/menu.php'</script>"; 
         }
     } else {
+        $id = $_POST['id'];
         $nome=$_POST['nome'];
         $sobrenome=$_POST['sobrenome'];
         $cpf=$_POST['cpf'];
         $email=$_POST['email'];
-        $id = $_POST['id']
+        
 
         $endereco = $_POST['endereco'];
         $query_endereco = mysqli_query($con, "SELECT E.id FROM endereco AS E WHERE E.endereco LIKE '%$endereco%'");
