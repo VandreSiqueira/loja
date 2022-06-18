@@ -34,18 +34,20 @@ include('../conexao.php');
             <select name="endereco">
             
             <?php
-                    $query_endereco = mysqli_query($con, "SELECT E.endereco FROM endereco as E WHERE E.id = '{$result['endereco_id']}'");
+                    $query_endereco = mysqli_query($con, "SELECT E.endereco FROM endereco AS E WHERE E.id = '{$result['endereco_id']}'");
                     $endereco = $query_endereco->fetch_array()[0];
                     ?><option selected> <?php echo $endereco; ?> </option><?php
-                    $sql =mysqli_query($con, "SELECT E.endereco FROM endereco as E");
+
+                    $sql =mysqli_query($con, "SELECT * FROM endereco");
                     $cnt=1;
                     $row=mysqli_num_rows($sql);
                     if($row>0){
                     while ($resultado=mysqli_fetch_array($sql)) {           
-                    ?>  
-                        <option><?php echo htmlentities($resultado['endereco']);?></option>                      
-                    <?php 
-        
+                    ?>
+                    <?php if($result['endereco_id'] != $resultado['id']) {?>
+                        <option><?php echo htmlentities($resultado['endereco']);?></option>                     
+                    <?php
+                    }
                     $cnt++;
                     }
 
