@@ -5,7 +5,6 @@ $mysqli = new mysqli("localhost", "root", "", "loja");
 if(isset($_POST['cadastrar'])){
     $cliente_id = $_POST['cliente'];
     $vendedor_id = $_POST['vendedor'];
-
     $mysqli->query("CALL inserir_pedido('$cliente_id','$vendedor_id', @ult_id)");
     $res = $mysqli->query("SELECT @ult_id as _p_out");
     $query_pedido_id = $res->fetch_assoc();
@@ -19,7 +18,6 @@ if(isset($_POST['cadastrar'])){
         }
         
     }
-    
     if($res){
         echo "<script>alert('Pedido realizado!');</script>";
         echo "<script>window.location.href='../pages/menu.php'</script>"; 
