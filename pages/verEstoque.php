@@ -15,7 +15,7 @@ include('../verificarLogin.php');
     <title>Estoque - Loja</title>
 </head>
 <body>
-    <div class="content">
+    <div class="content" style="margin-top: 5rem;margin-bottom: 5rem;margin-left: 25rem">
         <forms method="POST">
             <h2>Estoque</h2>
             <table>

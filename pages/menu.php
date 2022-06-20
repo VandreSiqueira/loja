@@ -13,7 +13,8 @@
     <title>Menu - Loja</title>
 </head>
 <body>
-    <div class="content">
+    <div class="container">
+    <div class="content" style="margin-top: 10rem;margin-bottom: 10rem">
         <h2>Menu</h2>
         <div id="op">
             <div id="opcoes">
@@ -25,21 +26,22 @@
             <div id="opcoes">
                 <a id="op5" href="cadastrarEndereco.php">Cadastrar Endereço</a>
                 <a id="op6" href="cadastrarProduto.php">Cadastrar Produto</a>
+                <a id="op7" href="listarCidade.php">Listar Cidade</a>
+                <a id="op8" href="listarCliente.php">Listar Cliente</a>
+            </div>
+            <div id="opcoes">
+                <a id="op9" href="listarEndereco.php">Listar Endereço</a>
+                <a id="op10" href="listarProduto.php">Listar Produto</a>
+                <a id="op11" href="listarVendas.php">Listar Vendas</a>
                 <?php 
                     if(isset($_SESSION['administrador'])){ ?>
-                    <a id="op7" href="cadastrarVendedor.php">Cadastrar Vendedor</a> 
+                    <a id="op12" href="cadastrarVendedor.php">Cadastrar Vendedor</a> 
                 <?php
                     }
                 ?>
-                <a id="op8" href="listarCidade.php">Listar Cidade</a>
             </div>
             <div id="opcoes">
-                <a id="op9" href="listarCliente.php">Listar Cliente</a>
-                <a id="op10" href="listarEndereco.php">Listar Endereço</a>
-                <a id="op11" href="listarProduto.php">Listar Produto</a>
-                <a id="op12" href="listarVendas.php">Listar Vendas</a>
-            </div>
-            <div id="opcoes">
+                
                 <?php 
                     if(isset($_SESSION['administrador'])){ ?>
                     <a id="op13" href="listarVendedor.php">Listar Vendedor</a>  
@@ -51,6 +53,7 @@
             
         </div>
         
+    </div>
     </div>
 </body>
 </html>

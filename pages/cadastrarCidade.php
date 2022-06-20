@@ -16,6 +16,7 @@ include('../verificarLogin.php');
 </head>
 
 <body>
+    <div class="container">
     <div class="content">
         <form method="POST" action="../control/controlCidade.php">
             <?php
@@ -33,26 +34,28 @@ include('../verificarLogin.php');
                         <?php
                         $query_endereco = mysqli_query($con, "SELECT P.pais FROM pais AS P WHERE P.id = '{$result['pais_id']}'");
                         $pais = $query_endereco->fetch_array()[0];
-                        ?><option selected> <?php echo $pais; ?> </option>
+                        ?>
+                        <option selected><?php echo $pais; ?></option>
                         <?php
-
-                                                                        $sql = mysqli_query($con, "SELECT * FROM pais");
-                                                                        $cnt = 1;
-                                                                        $row = mysqli_num_rows($sql);
-                                                                        if ($row > 0) {
-                                                                            while ($resultado = mysqli_fetch_array($sql)) {
-                                                                        ?>
+                        $sql = mysqli_query($con, "SELECT * FROM pais");
+                        $cnt = 1;
+                        $row = mysqli_num_rows($sql);
+                        if ($row > 0) {
+                            while ($resultado = mysqli_fetch_array($sql)) {
+                        ?>
                                 <?php if ($result['pais_id'] != $resultado['id']) { ?>
-                                    <option><?php echo htmlentities($resultado['pais']); ?></option>
+                                <option><?php echo htmlentities($resultado['pais']); ?></option>
                         <?php
-                                                                                }
-                                                                                $cnt++;
-                                                                            }
-                                                                        }
+                                }
+                                $cnt++;
+                            }
+                        }
                         ?>
                     </select>
-                <?php }
-            } else { ?>
+                <?php 
+                }
+            } else { 
+                ?>
                 <h2>Cadastrar cidade</h2>
                 <label>Cidade</label>
                 <input type="text" name="cidade" />
@@ -61,8 +64,6 @@ include('../verificarLogin.php');
                     <?php
                     $query_endereco = mysqli_query($con, "SELECT P.pais FROM pais AS P WHERE P.id = '{$result['pais_id']}'");
                     $pais = $query_endereco->fetch_array()[0];
-
-
                     $sql = mysqli_query($con, "SELECT * FROM pais");
                     $cnt = 1;
                     $row = mysqli_num_rows($sql);
@@ -70,15 +71,18 @@ include('../verificarLogin.php');
                         while ($resultado = mysqli_fetch_array($sql)) {
                     ?>
                             <option><?php echo htmlentities($resultado['pais']); ?></option>
-                <?php                   
-                        $cnt++;
+                    <?php                   
+                            $cnt++;
+                        }
                     }
-                }
-                ?>
+                    ?>
                 </select>
-                <?php } ?>
-                <input id="submit" type="submit" name="cadastrar" value="<?php echo (isset($_GET['id']) ? "Atualizar" : "Cadastrar"); ?>" />
+            <?php 
+            } 
+            ?>
+            <input id="submit" type="submit" name="cadastrar" value="<?php echo (isset($_GET['id']) ? "Atualizar" : "Cadastrar"); ?>" />
         </form>
+    </div>
     </div>
 </body>
 

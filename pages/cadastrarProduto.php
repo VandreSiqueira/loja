@@ -12,6 +12,7 @@ include('../conexao.php');
     <title>Cadastrar Produto - Loja</title>
 </head>
 <body>
+    <div class="container">
     <div class="content">
         <form method="POST" action="../control/controlProduto.php">
         <?php
@@ -45,6 +46,7 @@ include('../conexao.php');
             <?php } ?>
             <input id="submit" type="submit" name="cadastrar" value="<?php echo (isset($_GET['id']) ? "Atualizar" : "Cadastrar"); ?>" />
         </form>
+    </div>
     </div>
 </body>
 </html>

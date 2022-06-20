@@ -16,6 +16,7 @@ include('../verificarAdmLogin.php');
     <title>Vendedor - Loja</title>
 </head>
 <body>
+    <div class="container">
     <div class="content">
         <forms method="POST">
             <h2>Vendedores</h2>
@@ -68,6 +69,7 @@ include('../verificarAdmLogin.php');
             ?>
             </table>
         </forms>
+    </div>
     </div>
 </body>
 </html>

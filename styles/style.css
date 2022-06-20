@@ -10,15 +10,21 @@ html {
     background-size: auto;
 }
 
+.container {
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+}
+
 .content {
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);

@@ -9,7 +9,8 @@
     <title>Login - Loja</title>
 </head>
 <body>
-    <div class="content">
+    <div class="container">
+    <div class="content" style="margin-top: 10rem;margin-bottom: 10rem;">
         <form method="post" action="login.php">
             <h2>Login</h2>
             <label>Email: </label>
@@ -19,5 +20,6 @@
             <input id="submit" type="submit" value="Entrar" />
         </form>
     </div>
+    <div>
 </body>
 </html>

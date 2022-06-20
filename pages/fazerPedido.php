@@ -15,6 +15,7 @@ include('../verificarLogin.php');
     <title>Fazer Pedido - Loja</title>
 </head>
 <body>
+    <div class="container">
     <div class="content">
         <form method="post" action="../control/controlPedido.php">
             <h2>Fazer pedido</h2>
@@ -88,6 +89,7 @@ include('../verificarLogin.php');
             </div>
             <input id="submit" type="submit" name="cadastrar" value="Fazer pedido" />
         </form>
+    </div>
     </div>
 </body>
 </html>
