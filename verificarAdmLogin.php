@@ -1,6 +1,7 @@
 <?php
-if(!$_SESSION['administrador']){
-	header('Location : index.php');
-	exit();
+session_start();
+if (!isset($_SESSION['administrador'])){
+	session_destroy();
+	header('location: ../index.php');
 }
 ?>

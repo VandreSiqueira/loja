@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include('../verificarLogin.php');
 ?>
 <!DOCTYPE html>
@@ -26,7 +25,12 @@
             <div id="opcoes">
                 <a id="op5" href="cadastrarEndereco.php">Cadastrar Endereço</a>
                 <a id="op6" href="cadastrarProduto.php">Cadastrar Produto</a>
-                <a id="op7" href="cadastrarVendedor.php">Cadastrar Vendedor</a>
+                <?php 
+                    if(isset($_SESSION['administrador'])){ ?>
+                    <a id="op7" href="cadastrarVendedor.php">Cadastrar Vendedor</a> 
+                <?php
+                    }
+                ?>
                 <a id="op8" href="listarCidade.php">Listar Cidade</a>
             </div>
             <div id="opcoes">
@@ -36,7 +40,12 @@
                 <a id="op12" href="listarVendas.php">Listar Vendas</a>
             </div>
             <div id="opcoes">
-                <a id="op13" href="listarVendedor.php">Listar Vendedor</a>
+                <?php 
+                    if(isset($_SESSION['administrador'])){ ?>
+                    <a id="op13" href="listarVendedor.php">Listar Vendedor</a>  
+                <?php
+                    }
+                ?>
                 <a id="op14" href="../sair.php">Sair</a>
             </div>
             

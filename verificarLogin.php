@@ -1,9 +1,7 @@
 <?php
-if(!$_SESSION['vendedor']){
-	header('Location : index.php');
-	exit();
-} else if(!$_SESSION['administrador']) {
-    header('Location : index.php');
-	exit();
+session_start();
+if (!isset($_SESSION['administrador']) && !isset($_SESSION['vendedor'])){
+	session_destroy();
+	header('location: ../index.php');
 }
 ?>
