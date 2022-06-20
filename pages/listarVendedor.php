@@ -43,16 +43,16 @@ include('../conexao.php');
                     while ($result=mysqli_fetch_array($sql)) {        
                     ?>  
                        <tr>
-                       <td>
+                       <td style="width: 20%">
                             <p><?php echo htmlentities($result['nome']) . ' ' . htmlentities($result['sobrenome']);?></p>
                         </td>
-                        <td>
+                        <td style="width: 18%">
                             <p><?php echo htmlentities($result['cpf']);?></p>
                         </td>
-                        <td>
+                        <td style="width: 38%">
                             <p><?php echo htmlentities($result['email']);?></p>
                         </td>
-                        <td>
+                        <td style="width: 10%">
                             <p><?php echo htmlentities($result['salario']);?></p>
                         </td>
                         <td class="btnAcoes">

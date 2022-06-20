@@ -3,10 +3,6 @@
     align-items: center;
 }
 
-.content {
-    width: 40rem;
-}
-
 #col1, img {
     width: 200%;
     margin-right: 1rem;

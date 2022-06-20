@@ -29,7 +29,7 @@ include('../conexao.php');
                        <tr>
 
                         <td id="col1" style="width: 6%;">
-                            <div id="teste">
+                            <div id="nomeIcone">
                                 <img src="<?php echo htmlentities($result['link']);?>" />
                                 <p><?php echo htmlentities($result['nome']);?></p>
                             </div>
