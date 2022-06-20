@@ -2,7 +2,7 @@
 include('conexao.php');
 session_start();
 if(empty($_POST['login']) || empty($_POST['senha'])){
-    header('location: index.html');
+    header('location: index.php');
     exit;
 }
 $login = $_POST['login'];
