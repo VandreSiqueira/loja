@@ -31,14 +31,13 @@ include('../conexao.php');
                 </th>
             </tr>
             <?php 
-            $sql =mysqli_query($con, "SELECT * FROM venda GROUP BY pedido_id");
+            $sql =mysqli_query($con, "SELECT * FROM venda");
             $cnt=1;
             $row=mysqli_num_rows($sql);
             if($row>0){
             while ($result=mysqli_fetch_array($sql)) { 
-            $query_produto = mysqli_query($con, "SELECT P.nome, P.quantidade FROM produto");
-            $nome = $query_produto->fetch_array()[0];
-            $quantidade = $query_produto->fetch_array()[1];          
+            $query_nome_produto = mysqli_query($con, "SELECT P.nome FROM produto AS P WHERE P.id = {$result['produto_id']}");
+            $nome = $query_nome_produto->fetch_array()[0];        
             ?>  
                 <tr>
                 <td style="width: 6%">
@@ -48,7 +47,7 @@ include('../conexao.php');
                     <p><?php echo $nome;?></p>
                 </td>
                 <td style="width: 6%;">
-                    <p><?php echo $quantidade;?></p>
+                    <p><?php echo htmlentities($result['qnt']);?></p>
                 </td>
             </tr>
             <tr>                      
