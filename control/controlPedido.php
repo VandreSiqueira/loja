@@ -12,8 +12,10 @@ if(isset($_POST['cadastrar'])){
 
     for ($i = 0; $i < count($_POST['id']); $i++) {
         $produto_id = $_POST['id'][$i];
+        $res = $mysqli->query("SELECT P.quantidade FROM produto AS P WHERE P.id = $produto_id");
+        $quantidade_estoque = $res->fetch_array()[0];
         $qnt = $_POST['qnt'][$i];
-        if($qnt > 0){
+        if($qnt > 0 && $quantidade_estoque >= $qnt){
             $mysqli->query("CALL inserir_venda('$pedido_id','$produto_id', '$qnt')");
         }
         

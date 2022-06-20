@@ -1,37 +1,92 @@
 a {
-   text-decoration: none;
-   height: 3rem;
-   width: 10rem;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 0.3rem;
-   color: white;
-   margin: 0 0.3rem 0 0.3rem;
-   border-radius: 0.4rem;
-   margin: 0.2rem;
+    text-decoration: none;
+    height: 3rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    color: white;
+    margin: 0 0.3rem 0 0.3rem;
+    border-radius: 0.4rem;
+    margin: 0.2rem;
+ }
+ 
+ .content {
+     display: inline-block !important;
+ }
+ 
+ #opcoes {
+     margin: 0.1rem;
+ }
+ 
+ #op {
+    display: flex;
+ }
+ 
+ p {
+     width: 100%;
+     flex-wrap: wrap;
+ }
+ 
+ a, #op1 {
+     background-color: rgb(221, 48, 221);
+ }
+ 
+ a, #op2 {
+     background-color: rgb(62, 63, 56);
+ }
+ 
+ a, #op3 {
+     background-color: rgb(22, 22, 207);
+ }
+ 
+ a, #op4 {
+     background-color: rgb(13, 139, 55);
+ }
+ 
+ a, #op5 {
+     background-color: rgb(162, 230, 3);
+ }
+ 
+ a, #op6 {
+     background-color: rgb(226, 223, 21);
+ }
+ 
+ a, #op7 {
+     background-color: rgb(8, 83, 33);
+ }
+ 
+ a, #op8 {
+     background-color: rgb(73, 29, 75);
+ }
+ 
+ a, #op9 {
+     background-color: rgb(73, 29, 75);
+ }
+ 
+ a, #op10 {
+     background-color: rgb(56, 5, 5);
+ }
+ 
+ a, #op11 {
+     background-color: rgb(224, 96, 11);
+ }
+ 
+ a, #op12 {
+     background-color: rgb(9, 95, 91);
+ }
+ 
+ a, #op13 {
+    background-color: rgb(59, 33, 56);
+    width: 100%;
 }
 
-.content {
-    width: 30rem;
-}
-
-a, #op1 {
-    background-color: rgb(221, 48, 221);
-}
-
-a, #op2 {
-    background-color: rgb(211, 16, 55);
-}
-
-a, #op3 {
-    background-color: rgb(22, 22, 207);
-}
-
-a, #op4 {
-    background-color: rgb(13, 139, 55);
-}
-
-#opcoes, h2 {
-    text-align: center;
-}
+ a, #op14 {
+     background-color: rgb(211, 16, 55);
+     width: 100%;
+ }
+ 
+ #opcoes, h2 {
+     text-align: center;
+ } 

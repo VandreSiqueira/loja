@@ -1,8 +1,3 @@
-.content {
-    width: 60rem;
-    
-}
-
 tr {
     width: 100%;
 }
@@ -10,6 +5,10 @@ tr {
 a {
     width: 5rem;
     height: 1.5rem;
+}
+
+#edit {
+    background-color: green;
 }
 
 #del {

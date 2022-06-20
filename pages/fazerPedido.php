@@ -29,8 +29,10 @@ include('../conexao.php');
                        <tr>
 
                         <td id="col1" style="width: 6%;">
-                            <img src="<?php echo htmlentities($result['link']);?>" />
-                            <p><?php echo htmlentities($result['nome']);?></p>
+                            <div id="teste">
+                                <img src="<?php echo htmlentities($result['link']);?>" />
+                                <p><?php echo htmlentities($result['nome']);?></p>
+                            </div>
                         </td>
                         <td style="width: 10%">
                             <input type="number" name="qnt[]"/>

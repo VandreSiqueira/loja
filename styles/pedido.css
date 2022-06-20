@@ -1,9 +1,12 @@
-.content {
-    width: 40rem;
-}
-
 td {
     padding: 8px;
+}
+
+#teste {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 input {
@@ -15,7 +18,7 @@ input {
 }
 
 img {
-    width: 100%;
+    width: 20%;
 }
 
 #secao {
