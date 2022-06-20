@@ -10,14 +10,14 @@
 </head>
 <body>
     <div class="content">
-        <forms method="post" action="login.php">
+        <form method="POST" action="login.php">
             <h2>Administrador</h2>
             <label>Login: </label>
             <input type="text" name="login" />
             <label>Senha: </label>
             <input type="password" name="senha" />
             <input id="submit" type="submit" value="Entrar" />
-        </forms>
+        </form>
     </div>
 </body>
 </html>
