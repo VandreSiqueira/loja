@@ -60,7 +60,6 @@ include('../conexao.php');
                     $cnt++;
                     } }
             ?>
-            </tr>
             </table>
         </forms>
     </div>
