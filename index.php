@@ -13,7 +13,7 @@
         <form method="post" action="login.php">
             <h2>Login</h2>
             <label>Email: </label>
-            <input type="email" name="login" placeholder="vendedor@loja.com" />
+            <input type="text" name="login" placeholder="vendedor@loja.com" />
             <label>Senha: </label>
             <input type="password" name="senha" />
             <input id="submit" type="submit" value="Entrar" />

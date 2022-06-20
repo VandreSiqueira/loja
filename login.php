@@ -13,8 +13,13 @@ if($row == 1){
     $_SESSION['vendedor'] = $login;
     header('location: pages/menu.php');
     exit;
-} else {
+} else if($login == "admin" && $senha == "admin"){
+    $_SESSION['administrador'] = $login;
+    header('location: pages/menu.php');
+    exit;
+}else {
     header('location: index.php');
     exit;
 }
+
 ?>
