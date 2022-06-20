@@ -11,9 +11,9 @@
 <body>
     <div class="content">
         <forms method="post" action="login.php">
-            <h2>Login</h2>
-            <label>Email: </label>
-            <input type="email" name="login" placeholder="vendedor@loja.com" />
+            <h2>Administrador</h2>
+            <label>Login: </label>
+            <input type="text" name="login" />
             <label>Senha: </label>
             <input type="password" name="senha" />
             <input id="submit" type="submit" value="Entrar" />

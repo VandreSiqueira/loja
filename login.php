@@ -1,23 +1,23 @@
 <?php
 include('conexao.php');
 session_start();
-if(empty($_POST['email']) || empty($_POST['senha'])){
+if(empty($_POST['login']) || empty($_POST['senha'])){
     header('location: index.html');
     exit;
 }
-$email = mysqli_real_escape_string($con, empty($_POST['email']));
-$senha = mysqli_real_escape_string($con, empty($_POST['senha']));
+$login = $_POST['login'];
+$senha = $_POST['senha'];
 
-$query = "SELECT email, senha FROM vendedor WHERE email = {$email} and senha = {$senha}";
+$query = "SELECT email, senha FROM vendedor WHERE email = {$login} and senha = {$senha}";
 
 $result = mysqli_query($con, $query);
-echo $result;
-/*
+$row=mysqli_num_rows($result);
+
 if($row == 1){
-    $_SESSION['vendedor'] = $email;
+    $_SESSION['vendedor'] = $login;
+    header('location: menu.html');
     exit;
 } else {
     header('location: index.html');
     exit;
 }
-*/
