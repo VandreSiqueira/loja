@@ -8,16 +8,21 @@ if(empty($_POST['login']) || empty($_POST['senha'])){
 $login = $_POST['login'];
 $senha = $_POST['senha'];
 
-$query = "SELECT email, senha FROM vendedor WHERE email = {$login} and senha = {$senha}";
+echo $login . " ";
+echo $senha . " ";
 
-$result = mysqli_query($con, $query);
-$row=mysqli_num_rows($result);
+$sql = mysqli_query($con, "SELECT * FROM vendedor AS V WHERE V.email = '$login' AND V.senha = '$senha'");
+$row=mysqli_num_rows($sql);
+echo "Quantidade de linhas retornadas: " . $row;
 
 if($row == 1){
     $_SESSION['vendedor'] = $login;
-    header('location: menu.html');
+    header('location: pages/menu.php');
     exit;
 } else {
-    header('location: index.html');
+    header('location: index.php');
     exit;
 }
+
+
+?>

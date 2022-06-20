@@ -36,7 +36,7 @@
             </div>
             <div id="opcoes">
                 <a id="op13" href="listarVendedor.php">Listar Vendedor</a>
-                <a id="op14" href="sair.php">Sair</a>
+                <a id="op14" href="../sair.php">Sair</a>
             </div>
             
         </div>
