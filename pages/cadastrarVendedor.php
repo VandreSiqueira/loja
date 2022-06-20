@@ -1,5 +1,6 @@
 <?php 
 include('../conexao.php');
+include('../verificarAdmLogin.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
